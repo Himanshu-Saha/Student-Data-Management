@@ -18,7 +18,7 @@ void admin_page()
   cout<<setw(43)<<"[2]Remove Student"<<endl;
   cout<<setw(38)<<"[3]Add Marks"<<endl;
   cout<<setw(45)<<"[4]View All Student"<<endl;
-  cout<<setw(44)<<"[5]Clear All Data"<<endl;
+  cout<<setw(43)<<"[5]Clear All Data"<<endl;
   cout<<setw(36)<<"[0]Log Out"<<endl;
   int n;
   cin>>n;
