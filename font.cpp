@@ -9,8 +9,14 @@ int main()
     while(1)
     {
         system("clear");
-        cout<<setw(50)<<"WELCOME"<<endl<<endl;
-        cout<<setw(30)<<"[1] Login"<<endl;
+        cout<<setw(50)<<"WELCOME TO STUDENTS MANAGEMENT SYSTEM "<<endl<<endl;
+         cout<<"------------------------------------------------------------------"<<endl;
+        cout<<" This is a Simple Student Management System Developed for Educational Purpose \n using c++ . Student Management System is a basic C++ program for education establishments\n to manage student data. Student Management Systems provide capabilities for entering\n student test and other assessment scores, build student schedules, and manage many other \n student-related data needs in a school. In this Student Management System project, user \n  can create, display, search, modify and delete student record from a binary file."<<endl<<"\n\n";
+
+        cout<<"For Login Press 1 and Enter "<<endl;
+        cout<<"For Exit Press 0 and Enter " <<endl;
+        cout<<"\n\n\n";
+        cout<<setw(30)<<"[1] Login";
         cout<<setw(29)<<"[0] Exit"<<endl;
         try
         {
@@ -37,6 +43,17 @@ void Login()
     {
         system("clear");
         int n;
+        cout<<"--------------------------------------------------------------------"<<endl;
+        cout<<"Press 1 for login as user / Students for viewing result.........." <<endl;
+        cout<<"--------------------------------------------------------------------"<<endl;
+        cout<<"Press 2 for login as Admin (Super User) ..............."<<endl;
+        cout<<"--------------------------------------------------------------------"<<endl;
+        cout<<"Press 3 to go to home Section................"<<endl;
+        cout<<"-------------------------------------------------------------------"<<endl;
+        cout<<"Press 0 for Exit out of the program............."<<endl;
+        cout<<"-------------------------------------------------------------------"<<endl;
+
+        cout<<"\n\n";
         cout<<setw(30)<<"[1] User"<<endl;
         cout<<setw(31)<<"[2] Admin"<<endl;
         cout<<setw(30)<<"[3] Home"<<endl;
