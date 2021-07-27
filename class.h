@@ -88,14 +88,18 @@ void admin::all_data()
     file2.seekg(0, ios::beg);
     for(int i=0;i<f1;i++)
     {
+        if(f1==0){
+            cout<<"No data added"<<endl;
+            break;
+        }
         file1.read((char*)&d,sizeof(d));
-        cout<<d.roll_no<<" "<<d.name<<" "<<d.branch<<" "<<d.year<<endl;
+        cout<<"Roll_no: "<<setw(10)<<d.roll_no<<"||  Name: "<<setw(10)<<d.name<<"||  Branch: "<<setw(6)<<d.branch<<"||  Year: "<<setw(6)<<d.year<<endl;
         for(int j=0;j<f2;j++)  
         {   
             file2.read((char*)&m,sizeof(m));
             if(strcmp(d.roll_no,m.roll_no)==0)
             {
-                cout<<m.math<<" "<<m.icse<<" "<<m.oop<<" "<<m.chemistry<<" "<<m.total<<endl;
+                cout<<"Maths: "<<setw(4)<<m.math<<"||  ICSE: "<<setw(4)<<m.icse<<"||  OOP: "<<setw(4)<<m.oop<<"||  Chemistry: "<<setw(4)<<m.chemistry<<endl<<setw(15)<<"Total: "<<setw(4)<<m.total<<endl<<endl;
                 break;
             }
         }
@@ -129,6 +133,7 @@ void admin::remove_student(char str[10])
     temp.close();
     int value1=remove("data.txt");
     int value2= rename("temp.txt","data.txt");
+    if(value2==0)cout<<"successfully done"<<endl;
     mark m;
     ofstream temp2("temp2.txt",ios::trunc);
     if(!temp2.is_open())
@@ -153,6 +158,7 @@ void admin::remove_student(char str[10])
     temp.close();
     int value3=remove("marks.txt");
     int value4= rename("temp2.txt","marks.txt");
+    if(value4==0)cout<<"successfully done"<<endl;
 }
 void student::show_data(char str[10])
 {    
@@ -171,7 +177,7 @@ void student::show_data(char str[10])
         file1.read((char*)&d,sizeof(d));
         if(strcmp(d.roll_no,str)==0)
             {
-                cout<<d.roll_no<<" "<<d.name<<" "<<d.branch<<" "<<d.year<<endl;
+                cout<<"Roll_no: "<<setw(10)<<d.roll_no<<"||  Name: "<<setw(10)<<d.name<<"||  Branch: "<<setw(6)<<d.branch<<"||  Year: "<<setw(6)<<d.year<<endl;
                 break;
             }
     }
@@ -194,7 +200,7 @@ void student::show_marks(char str[10])
         file.read((char*)&m,sizeof(m));
         if(strcmp(m.roll_no,str)==0)
             {
-                cout<<m.math<<" "<<m.icse<<" "<<m.oop<<" "<<m.chemistry<<" "<<m.total<<endl;
+                cout<<"Maths: "<<setw(4)<<m.math<<"||  ICSE: "<<setw(4)<<m.icse<<"||  OOP: "<<setw(4)<<m.oop<<"||  Chemistry: "<<setw(4)<<m.chemistry<<endl<<setw(15)<<"Total: "<<setw(4)<<m.total<<endl;
                 break;
             }
     }
